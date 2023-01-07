@@ -4,11 +4,9 @@ export default function statusCheck(dictionary) {
 
   if (+dictionary.health > 50) {
     message = 'healthy';
-  }
-  else if (+dictionary.health > 15 && +dictionary.health <= 50) {
+  } else if (+dictionary.health > 15 && +dictionary.health <= 50) {
     message = 'wounded';
-  }
-  else if (+dictionary.health < 15) {
+  } else if (+dictionary.health < 15) {
     message = 'critical';
   }
 
@@ -16,7 +14,5 @@ export default function statusCheck(dictionary) {
 }
 
 export function sortDictionary(dictionary) {
-  return dictionary.sort(function (item1, item2) {
-    return item2.health - item1.health;
-  });
+  return dictionary.sort((item1, item2) => item2.health - item1.health);
 }
