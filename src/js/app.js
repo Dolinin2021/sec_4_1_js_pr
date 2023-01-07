@@ -12,7 +12,3 @@ export default function statusCheck(dictionary) {
 
   return message;
 }
-
-export function sortDictionary(dictionary) {
-  return dictionary.sort((item1, item2) => item2.health - item1.health);
-}
