@@ -1,6 +1,22 @@
 // TODO: write your code here
-import sum from './basic.js';
+export default function statusCheck(dictionary) {
+  let message;
 
-console.log('worked');
+  if (+dictionary.health > 50) {
+    message = 'healthy';
+  }
+  else if (+dictionary.health > 15 && +dictionary.health <= 50) {
+    message = 'wounded';
+  }
+  else if (+dictionary.health < 15) {
+    message = 'critical';
+  }
 
-console.log(sum([1, 2]));
+  return message;
+}
+
+export function sortDictionary(dictionary) {
+  return dictionary.sort(function (item1, item2) {
+    return item2.health - item1.health;
+  });
+}
